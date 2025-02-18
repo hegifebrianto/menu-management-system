@@ -19,13 +19,15 @@ export default function MenusPage() {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col px-6 py-5 bg-gray-50 min-h-screen">
       {/* Header with Sidebar Toggle */}
       <MenusHeader />
 
       {/* Dropdown Section */}
-      <div className="mb-8 max-w-xs">
-        <h2 className="text-sm font-medium text-gray-700 mb-2">Menu</h2>
+      <div className="mt-6 w-full max-w-sm">
+        <h2 className="text-xs font-semibold text-gray-800 uppercase mb-1">
+          Select Menu
+        </h2>
         <MenuDropdown
           selectedMenuId={selectedMenuId}
           onSelect={setSelectedMenuId}
@@ -33,10 +35,12 @@ export default function MenusPage() {
       </div>
 
       {/* Content Sections */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Menu Structure Section */}
-        <div className="bg-white rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4">Menu Structure</h3>
+        <div className="bg-white shadow-md rounded-xl p-5 border border-gray-200">
+          <h3 className="text-base font-bold text-gray-900 mb-4">
+            Menu Hierarchy
+          </h3>
           <MenuTree
             selectedMenuId={selectedMenuId}
             onSelect={setSelectedMenuId}
@@ -44,7 +48,7 @@ export default function MenusPage() {
         </div>
 
         {/* Menu Form Section */}
-        <div className="bg-white rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-xl p-5 border border-gray-200">
           <MenuForm
             selectedMenuId={selectedMenuId}
             onSuccess={() => setSelectedMenuId(null)} // Reset selectedMenuId after creating a parent
