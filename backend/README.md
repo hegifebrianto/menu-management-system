@@ -22,7 +22,7 @@ Backend API for Menu Management System built with:
       NODE_ENV=development
 
       # Database Configuration
-      DATABASE_URL=postgresql://admin:admin@localhost:5432/menu_management_system
+      DATABASE_URL=
       # CORS Configuration
       CORS_ORIGIN=*
       CORS_METHODS=GET,HEAD,PUT,PATCH,POST,DELETE
@@ -32,4 +32,7 @@ Backend API for Menu Management System built with:
    
       npx prisma migrate dev
       npm run start:dev
+
+3. **Run frontend with api backend**  
+ https://menu-management-system-production.up.railway.app/api     
    

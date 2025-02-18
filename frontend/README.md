@@ -24,7 +24,7 @@ npm install
 ### 3️⃣ Configure Environment Variables
 Create a `.env` file and define the API base URL:
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/
+NEXT_PUBLIC_API_BASE_URL=https://menu-management-system-production.up.railway.app/api
 ```
 
 ### 4️⃣ Run the Development Server

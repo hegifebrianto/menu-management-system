@@ -34,7 +34,7 @@ npm install
 
 2️⃣ Configure environment variables (`.env`):
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/
+NEXT_PUBLIC_API_BASE_URL=https://menu-management-system-production.up.railway.app/api/
 ```
 
 3️⃣ Run the frontend application:
