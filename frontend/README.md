@@ -1,42 +1,67 @@
-# Frontend - Next.js 14 + Redux + TailwindCSS
+# 📌 Menu Management System - Frontend
 
-## 🚀 Overview
-This is the frontend for the Menu Management System, built with:
-- **Next.js 14 (App Router & API Routes)**
+This is the **frontend** of the Menu Management System, developed with:
+- **Next.js 14** (App Router & API Routes)
 - **Redux Toolkit** for state management
 - **TailwindCSS** for styling
-- **TypeScript** for type safety
+- **TypeScript** for enhanced type safety
 
+---
 
-## ⚙️ Installation & Setup
-1. **Clone the repository**  
-   
-      git clone https://github.com/wondwosen-bewketu/Menu-Managment-System.git
-      cd Menu-Managment-System/frontend
-   
-2. **Install dependencies**  
-   
-      npm install
-   
-3. **Set up environment variables** (`.env.local`)  
-   
-      NEXT_PUBLIC_API_BASE_URL=https://menu-managment-system-8a9y.onrender.com/api
-   
-4. **Run the development server**  
-   
-      npm run dev
-   
-      Visit [https://menu-managment-system-chi.vercel.app/](https://menu-managment-system-chi.vercel.app/)
+## 🚀 Getting Started
 
-## 📌 Features
-✅ **Hierarchical Menu Management**  
-✅ **Dynamic Sidebar Navigation**  
-✅ **Redux State Management**  
-✅ **API Integration**  
-✅ **Responsive Design**  
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/hegifebrianto/menu-management-system
+cd frontend
+```
 
-## 🔥 API Integration
-- `GET /menus` – Fetch all menus  
-- `POST /menus` – Create menu  
-- `PUT /menus/:id` – Update menu  
-- `DELETE /menus/:id` – Delete menu  
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+
+### 3️⃣ Configure Environment Variables
+Create a `.env` file and define the API base URL:
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/
+```
+
+### 4️⃣ Run the Development Server
+```sh
+npm run dev
+```
+
+---
+
+## 🎯 Key Features
+✔ **Hierarchical Menu Management** - Organize menus dynamically in a tree structure.  
+✔ **Sidebar Navigation** - Easily navigate through the menu categories.  
+✔ **State Management with Redux** - Optimized global state handling.  
+✔ **API Connectivity** - Seamless communication with the backend.  
+✔ **Fully Responsive** - Adaptable UI for all devices.  
+
+---
+
+## 📡 API Endpoints
+- **`GET /menus`** - Retrieve all menus.
+- **`GET /menus/top-level`** - Retrieve all menus with head top level.
+- **`POST /menus`** - Add a new menu entry.
+- **`PUT /menus/:id`** - Modify an existing menu.
+- **`DELETE /menus/:id`** - Remove a menu entry.
+
+---
+
+## 🛠️ Technologies Used
+- **Next.js 14** - React framework for modern web applications.
+- **Redux Toolkit** - Centralized state management.
+- **TailwindCSS** - Utility-first CSS framework.
+- **TypeScript** - Static typing for better maintainability.
+
+---
+
+### 📢 Contributions & Feedback
+We welcome contributions! If you have suggestions or feature requests, feel free to create an issue or submit a pull request.
+
+Enjoy coding! 🚀
+
