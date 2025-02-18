@@ -1,41 +1,53 @@
 "use client";
 
-import React, { useState } from "react";
-import Header from "@/app/menusHeader";
-import FormMenu from "@/components/menuForm";
-import DropdownMenu from "@/components/menuDropdown";
-import TreeView from "@/components/menuTree";
+import React, { useEffect, useState } from "react";
+import MenusHeader from "@/app/menusHeader";
+import MenuForm from "@/components/menuForm";
+import MenuDropdown from "@/components/menuDropdown";
+import MenuTree from "@/components/menuTree";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../app/redux/store";
+import { fetchMenus } from "../app/redux/slices/menuSlice";
 
-export default function MenuManagementPage() {
+export default function MenusPage() {
   const dispatch = useDispatch<AppDispatch>();
-  const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
+  const [selectedMenuId, setSelectedMenuId] = useState<string | null>(null);
+
+  // Fetch menus on component mount
+  useEffect(() => {
+    dispatch(fetchMenus());
+  }, [dispatch]);
 
   return (
     <div className="flex flex-col p-4">
-      {/* Header Section */}
-      <Header />
+      {/* Header with Sidebar Toggle */}
+      <MenusHeader />
 
-      {/* Dropdown for Menu Selection */}
+      {/* Dropdown Section */}
       <div className="mb-8 max-w-xs">
-        <h2 className="text-sm font-medium text-gray-700 mb-2">Select Menu</h2>
-        <DropdownMenu selectedMenuId={activeMenuId} onSelect={setActiveMenuId} />
+        <h2 className="text-sm font-medium text-gray-700 mb-2">Menu</h2>
+        <MenuDropdown
+          selectedMenuId={selectedMenuId}
+          onSelect={setSelectedMenuId}
+        />
       </div>
 
-      {/* Main Content Layout */}
+      {/* Content Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Hierarchical Menu Display */}
+        {/* Menu Structure Section */}
         <div className="bg-white rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4">Menu Hierarchy</h3>
-          <TreeView selectedMenuId={activeMenuId} onSelect={setActiveMenuId} />
+          <h3 className="text-lg font-semibold mb-4">Menu Structure</h3>
+          <MenuTree
+            selectedMenuId={selectedMenuId}
+            onSelect={setSelectedMenuId}
+          />
         </div>
 
-        {/* Menu Editing Section */}
+        {/* Menu Form Section */}
         <div className="bg-white rounded-lg p-6">
-          <FormMenu
-            selectedMenuId={activeMenuId}
-            onSuccess={() => setActiveMenuId(null)} // Reset selection after modification
+          <MenuForm
+            selectedMenuId={selectedMenuId}
+            onSuccess={() => setSelectedMenuId(null)} // Reset selectedMenuId after creating a parent
           />
         </div>
       </div>
