@@ -1,15 +1,12 @@
 # Backend - NestJS + PostgreSQL + Prisma
 
-## 🚀 Overview
 Backend API for Menu Management System built with:
 - **NestJS**
 - **PostgreSQL**
 - **Prisma**
 
 ## 📌 Important Links
-- **Live API**: https://menu-managment-system-8a9y.onrender.com/api
-- **GitHub**: https://github.com/wondwosen-bewketu/Menu-Managment-System
-- **API Documentation**: https://menu-managment-system-8a9y.onrender.com/api
+
 
 ## ⚙️ Setup
 1. **Install dependencies**  
@@ -25,7 +22,7 @@ Backend API for Menu Management System built with:
       NODE_ENV=development
 
       # Database Configuration
-      DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+      DATABASE_URL=postgresql://admin:admin@localhost:5432/menu_management_system
       # CORS Configuration
       CORS_ORIGIN=*
       CORS_METHODS=GET,HEAD,PUT,PATCH,POST,DELETE
